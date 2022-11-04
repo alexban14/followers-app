@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Mosh's GitHub profile followers.</h2>
+  <div
+    *ngFor="let follower of followers"
+    class="card mb-3 d-inline-flex p-2 m-2"
+    style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="follower.avatar_url" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">
+<!-- the first element is the path, after that are route parameters -->
+            <a [routerLink]="['/followers', follower.id, follower.login]">
+             {{ follower.login }}
+            </a>
+          </h5>
+          <a routerLink="follower.html_url">{{ follower.html_url }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

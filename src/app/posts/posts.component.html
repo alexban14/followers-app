@@ -1,0 +1,24 @@
+<div class="container my-3">
+  <input
+    class="form-control mb-3"
+    (keyup.enter)="create(title)"
+    #title>
+
+  <ul class="list-group mb-3">
+    <li
+      class="list-group-item"
+      *ngFor="let post of posts">
+      <button
+        (click)="update(post)"
+        class="btn btn-outline-info btn-sm">
+          Update
+      </button>
+        {{ post.title }}
+      <button
+        (click)="delete(post)"
+        class="btn btn-outline-danger btn-sm">
+          Delete
+      </button>
+    </li>
+  </ul>
+</div>
